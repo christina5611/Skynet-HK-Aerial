@@ -1,19 +1,40 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-int main() {
-	
-	cout << "Counting Forward:\n";
-	//counts forward to less than ten
-	for (int i = 0; i < 10; ++i)
+int main()
+{
+	srand(static_cast<unsigned int>(time(0)));
+	//seed random number generator
+
+	int secretNumber = rand() % 100 + 1;
+	//random number between 1 and 100
+	int tries = 0;
+	int guess;
+	cout << "\tWelcome to guess my number.\n\n";
+
+	do
 	{
-		cout << i << " ";
-	}
-	cout << "\n\nCounting backward:\n";
-	// counts backwards less than ten
-	for (int i = 9; i >= 0; --i)
-	{
-		cout << i << " ";
-	}
+		cout << "Enter a guess:";
+		cin >> guess;
+		++tries;
+
+		if (guess > secretNumber)
+		{
+			cout << "Too high!\n\n";
+		}
+		else if (guess < secretNumber)
+		{
+			cout << "Too low!\n\n";
+		}
+		else
+		{
+			cout << "\nThat's it! You got it in " << tries
+				<< " guesses!\n";
+		}
+	} while (guess != secretNumber);
+	return 0;
 	
 }
+
