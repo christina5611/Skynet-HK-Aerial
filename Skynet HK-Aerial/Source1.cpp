@@ -118,6 +118,11 @@ int main()
 	} while (AI_Linear_Current_Location_prediction != actualTargetLocation);
 	// end linear ai tries to find the target
 	
-	return 0;
+	cout << "\nThe human got it in " << human_Number_of_predictions << "guesses!\n";
+	cout << "\nThe binary Ai got it in " << AI_Binary_Number_of_predictions << "guesses!\n";
+	cout << "\nThe Linear Ai got it in " << AI_Linear_Number_of_predictions << "guesses!\n";
+	cout << "\nWould you like to play again? Y/N ";
+	
 	}
+ 
 		
